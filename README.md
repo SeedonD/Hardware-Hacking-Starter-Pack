@@ -13,7 +13,7 @@
 <img src="https://img.shields.io/badge/Skill-Beginner_to_Advanced-black?style=for-the-badge" alt="Skill Level"/>
 
 <!-- License -->
-<img src="https://img.shields.io/github/license/seedon198/hardware-hacking-starter-pack?style=for-the-badge&color=black" alt="License: MIT"/>
+<img src="https://img.shields.io/github/license/SeedonD/hardware-hacking-starter-pack?style=for-the-badge&color=black" alt="License: MIT"/>
 
 <!-- Development Status -->
 <img src="https://img.shields.io/badge/Status-Active_Development-black?style=for-the-badge&logo=github" alt="Development Status"/>
@@ -28,7 +28,7 @@ Welcome to the **Hardware Hacking Starter Pack**! This comprehensive resource is
 
 In today's interconnected world, hardware security has become increasingly critical. As more devices become **"smart"** and connected to networks, the attack surface expands beyond traditional software vulnerabilities to include hardware components. Understanding how to analyze, test, and secure hardware is an essential skill for comprehensive security assessment and protection.
 
-> **Interactive version available at [hw101.me/Hardware-Hacking-Starter-Pack](https://hw101.me/Hardware-Hacking-Starter-Pack/)** — a full webapp with progress tracking, difficulty filters, bookmarks, search, and learning paths. The markdown source in this repo is the canonical content.
+> **Interactive version available at [hw101.me/Hardware-Hacking-Starter-Pack](https://hw101.me/Hardware-Hacking-Starter-Pack/)** â€” a full webapp with progress tracking, difficulty filters, bookmarks, search, and learning paths. The markdown source in this repo is the canonical content.
 
 ## Why Hardware Hacking Matters
 
@@ -43,18 +43,18 @@ In today's interconnected world, hardware security has become increasingly criti
 This Hardware Hacker Starter Pack is organized into a logical folder structure to help you find content more easily:
 
 ```ansi
-📁 sections/
-├── 🧠 01-foundations/             — Core knowledge for hardware security  
-├── 🔌 02-communication-protocols/ — Hardware interfaces and protocols  
-│   ├── ⚙️  wired/                 — Physical connection protocols  
-│   └── 📡 wireless/               — RF and wireless communication  
-├── 🔍 03-firmware/                — Firmware analysis techniques  
-├── 💣 04-attack-vectors/          — Hardware attack methodologies  
-├── 🕵️‍♂️ 05-reverse-engineering/     — Understanding unknown hardware  
-├── 🔐 06-embedded-security/       — Securing embedded systems  
-├── 📱 07-specialized-domains/     — Mobile and IoT security  
-├── 🧑‍💼 08-professional/            — Career development resources  
-└── 📚 09-resources/                — Conferences, talks, labs, and bug bounties  
+ðŸ“ sections/
+â”œâ”€â”€ ðŸ§  01-foundations/             â€” Core knowledge for hardware security  
+â”œâ”€â”€ ðŸ”Œ 02-communication-protocols/ â€” Hardware interfaces and protocols  
+â”‚   â”œâ”€â”€ âš™ï¸  wired/                 â€” Physical connection protocols  
+â”‚   â””â”€â”€ ðŸ“¡ wireless/               â€” RF and wireless communication  
+â”œâ”€â”€ ðŸ” 03-firmware/                â€” Firmware analysis techniques  
+â”œâ”€â”€ ðŸ’£ 04-attack-vectors/          â€” Hardware attack methodologies  
+â”œâ”€â”€ ðŸ•µï¸â€â™‚ï¸ 05-reverse-engineering/     â€” Understanding unknown hardware  
+â”œâ”€â”€ ðŸ” 06-embedded-security/       â€” Securing embedded systems  
+â”œâ”€â”€ ðŸ“± 07-specialized-domains/     â€” Mobile and IoT security  
+â”œâ”€â”€ ðŸ§‘â€ðŸ’¼ 08-professional/            â€” Career development resources  
+â””â”€â”€ ðŸ“š 09-resources/                â€” Conferences, talks, labs, and bug bounties  
 ```
 
 ## Content Overview
@@ -71,7 +71,7 @@ This Hardware Hacker Starter Pack is organized into a logical folder structure t
   </thead>
   <tbody>
     <tr>
-      <td rowspan="4"><strong>📚<br>Foundations</strong></td>
+      <td rowspan="4"><strong>ðŸ“š<br>Foundations</strong></td>
       <td><a href="./sections/01-foundations/01-introduction.md">Introduction</a></td>
       <td class="topic-column">Core concepts and mindset</td>
       <td>Hardware security fundamentals, threat models, approaches</td>
@@ -97,7 +97,7 @@ This Hardware Hacker Starter Pack is organized into a logical folder structure t
     </tr>
   <!-- Communication Protocols -->
   <tr>
-    <td rowspan="1"><strong>📡<br>Communication<br>Protocols</strong></td>
+    <td rowspan="1"><strong>ðŸ“¡<br>Communication<br>Protocols</strong></td>
     <td><a href="./sections/02-communication-protocols/index.md"><strong>Protocol Overview</strong></a></td>
     <td class="topic-column">Communication basics</td>
     <td>Protocol selection, analysis methodology, common tools</td>
@@ -106,14 +106,14 @@ This Hardware Hacker Starter Pack is organized into a logical folder structure t
   
   <!-- Communication Protocols - Wired -->
   <tr>
-    <td rowspan="6"><strong>🔌<br>Wired<br>Protocols</strong></td>
+    <td rowspan="6"><strong>ðŸ”Œ<br>Wired<br>Protocols</strong></td>
     <td><a href="./sections/02-communication-protocols/wired/01-uart-protocol.md"><strong>UART</strong></a></td>
     <td class="topic-column">Serial communication</td>
     <td>Baud rates, signal levels, debugging interfaces, console access</td>
     <td><span>Beginner</span></td>
   </tr>
   <tr>
-    <td><a href="./sections/02-communication-protocols/wired/02-i2c-protocol.md"><strong>I²C</strong></a></td>
+    <td><a href="./sections/02-communication-protocols/wired/02-i2c-protocol.md"><strong>IÂ²C</strong></a></td>
     <td class="topic-column">Two-wire interface</td>
     <td>Address space, bus arbitration, sensor interfaces, sniffing</td>
     <td><span>Beginner</span></td>
@@ -145,7 +145,7 @@ This Hardware Hacker Starter Pack is organized into a logical folder structure t
   
   <!-- Communication Protocols - Wireless -->
   <tr>
-    <td rowspan="7"><strong>📡<br>Wireless<br>Protocols</strong></td>
+    <td rowspan="7"><strong>ðŸ“¡<br>Wireless<br>Protocols</strong></td>
     <td><a href="./sections/02-communication-protocols/wireless/index.md"><strong>Wireless Overview</strong></a></td>
     <td class="topic-column">RF communication basics</td>
     <td>Spectrum analysis, wireless security principles</td>
@@ -190,7 +190,7 @@ This Hardware Hacker Starter Pack is organized into a logical folder structure t
   
   <!-- Firmware -->
   <tr>
-    <td rowspan="1"><strong>💾<br>Firmware</strong></td>
+    <td rowspan="1"><strong>ðŸ’¾<br>Firmware</strong></td>
     <td><a href="./sections/03-firmware/01-firmware-analysis.md"><strong>Firmware Analysis</strong></a></td>
     <td class="topic-column">Code extraction & review</td>
     <td>Extraction methods, binary analysis, vulnerability research</td>
@@ -199,7 +199,7 @@ This Hardware Hacker Starter Pack is organized into a logical folder structure t
   
   <!-- Attack Vectors -->
   <tr>
-    <td rowspan="6"><strong>🛠️<br>Attack<br>Vectors</strong></td>
+    <td rowspan="6"><strong>ðŸ› ï¸<br>Attack<br>Vectors</strong></td>
     <td><a href="./sections/04-attack-vectors/index.md"><strong>Attack Overview</strong></a></td>
     <td class="topic-column">Vulnerability types</td>
     <td>Attack methodologies, risk assessment, hardware threats</td>
@@ -238,7 +238,7 @@ This Hardware Hacker Starter Pack is organized into a logical folder structure t
   
   <!-- Reverse Engineering -->
   <tr>
-    <td rowspan="6"><strong>🔍<br>Reverse<br>Engineering</strong></td>
+    <td rowspan="6"><strong>ðŸ”<br>Reverse<br>Engineering</strong></td>
     <td><a href="./sections/05-reverse-engineering/index.md"><strong>RE Overview</strong></a></td>
     <td class="topic-column">Methodology basics</td>
     <td>Approach to unknown hardware, documentation techniques</td>
@@ -277,7 +277,7 @@ This Hardware Hacker Starter Pack is organized into a logical folder structure t
   
   <!-- Embedded Security -->
   <tr>
-    <td rowspan="6"><strong>🔒<br>Embedded<br>Security</strong></td>
+    <td rowspan="6"><strong>ðŸ”’<br>Embedded<br>Security</strong></td>
     <td><a href="./sections/06-embedded-security/index.md"><strong>Security Principles</strong></a></td>
     <td class="topic-column">Protective design</td>
     <td>Threat modeling, security architecture, defense in depth</td>
@@ -316,7 +316,7 @@ This Hardware Hacker Starter Pack is organized into a logical folder structure t
   
   <!-- Specialized Domains -->
   <tr>
-    <td rowspan="2"><strong>📱<br>Specialized<br>Domains</strong></td>
+    <td rowspan="2"><strong>ðŸ“±<br>Specialized<br>Domains</strong></td>
     <td><a href="./sections/07-specialized-domains/01-mobile-hacking.md"><strong>Mobile Security</strong></a></td>
     <td class="topic-column">Phone/tablet hardware</td>
     <td>Baseband processors, secure elements, biometric systems</td>
@@ -331,7 +331,7 @@ This Hardware Hacker Starter Pack is organized into a logical folder structure t
   
   <!-- Professional Development -->
   <tr>
-    <td rowspan="6"><strong>🚀<br>Professional<br>Development</strong></td>
+    <td rowspan="6"><strong>ðŸš€<br>Professional<br>Development</strong></td>
     <td><a href="./sections/08-professional/01-learning-path.md"><strong>Learning Path</strong></a></td>
     <td class="topic-column">Skill progression</td>
     <td>Knowledge roadmap, learning strategies, skill assessment</td>
@@ -370,7 +370,7 @@ This Hardware Hacker Starter Pack is organized into a logical folder structure t
 
   <!-- External Resources -->
   <tr>
-    <td rowspan="4"><strong>📚<br>Resources</strong></td>
+    <td rowspan="4"><strong>ðŸ“š<br>Resources</strong></td>
     <td><a href="./sections/09-resources/01-conferences.md"><strong>Conferences</strong></a></td>
     <td class="topic-column">Hardware security events</td>
     <td>Conferences and events with hardware security tracks</td>
@@ -417,7 +417,7 @@ While this guide starts from foundational concepts, having some background in th
 
 ## How to Use This Guide
 
-**Recommended:** Use the interactive webapp at **[hw101.me/Hardware-Hacking-Starter-Pack](https://hw101.me/Hardware-Hacking-Starter-Pack/)** for the best experience — it includes progress tracking, curated learning paths, full-text search, bookmarks, and difficulty filtering.
+**Recommended:** Use the interactive webapp at **[hw101.me/Hardware-Hacking-Starter-Pack](https://hw101.me/Hardware-Hacking-Starter-Pack/)** for the best experience â€” it includes progress tracking, curated learning paths, full-text search, bookmarks, and difficulty filtering.
 
 You can also read the markdown files directly in this repository:
 
