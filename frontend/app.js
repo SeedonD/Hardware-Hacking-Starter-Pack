@@ -1,18 +1,18 @@
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• Â§1 CONSTANTS & CONFIG */
+/* ═══════════════════════════════════════════════ §1 CONSTANTS & CONFIG */
 
 const RAW_BASE = 'https://raw.githubusercontent.com/SeedonD/Hardware-Hacking-Starter-Pack/main/';
 const INDEX_URL = 'content-index.json';
 
 const SECTIONS_META = [
-  { num: 1, name: '01 â€” FOUNDATIONS' },
-  { num: 2, name: '02 â€” PROTOCOLS' },
-  { num: 3, name: '03 â€” FIRMWARE' },
-  { num: 4, name: '04 â€” ATTACK VECTORS' },
-  { num: 5, name: '05 â€” REVERSE ENGINEERING' },
-  { num: 6, name: '06 â€” EMBEDDED SECURITY' },
-  { num: 7, name: '07 â€” SPECIALIZED DOMAINS' },
-  { num: 8, name: '08 â€” PROFESSIONAL' },
-  { num: 9, name: '09 â€” RESOURCES' },
+  { num: 1, name: '01 — FOUNDATIONS' },
+  { num: 2, name: '02 — PROTOCOLS' },
+  { num: 3, name: '03 — FIRMWARE' },
+  { num: 4, name: '04 — ATTACK VECTORS' },
+  { num: 5, name: '05 — REVERSE ENGINEERING' },
+  { num: 6, name: '06 — EMBEDDED SECURITY' },
+  { num: 7, name: '07 — SPECIALIZED DOMAINS' },
+  { num: 8, name: '08 — PROFESSIONAL' },
+  { num: 9, name: '09 — RESOURCES' },
 ];
 
 const LEARNING_PATHS = {
@@ -80,14 +80,14 @@ const LEARNING_PATHS = {
   },
 };
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• Â§2 THEME */
+/* ═══════════════════════════════════════════════ §2 THEME */
 
 const LS_THEME = 'hhsp_theme';
 
 function applyTheme(theme) {
   document.body.classList.toggle('light', theme === 'light');
   const btn = document.getElementById('themeBtn');
-  if (btn) btn.textContent = theme === 'light' ? 'â˜¾ DARK' : 'â˜€ LIGHT';
+  if (btn) btn.textContent = theme === 'light' ? '☾ DARK' : '☀ LIGHT';
 }
 
 function initTheme() {
@@ -100,7 +100,7 @@ function initTheme() {
   });
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• Â§3 ROUTER */
+/* ═══════════════════════════════════════════════ §3 ROUTER */
 
 let _currentPath = null;
 
@@ -135,7 +135,7 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• Â§4 CONTENT INDEX */
+/* ═══════════════════════════════════════════════ §4 CONTENT INDEX */
 
 let _index = [];
 const _articleCache = new Map();
@@ -164,9 +164,9 @@ function getEntriesForSection(sectionNum) {
   return _index.filter(e => e.section_num === sectionNum);
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• Â§5 SIDEBAR */
+/* ═══════════════════════════════════════════════ §5 SIDEBAR */
 
-/* â”€â”€ State â”€â”€ */
+/* ── State ── */
 const LS_PROGRESS  = 'hhsp_progress';
 const LS_FILTER    = 'hhsp_filter';
 const LS_BOOKMARKS = 'hhsp_bookmarks';
@@ -188,7 +188,7 @@ function saveProgress()  { localStorage.setItem(LS_PROGRESS, JSON.stringify([...
 function saveFilter()    { localStorage.setItem(LS_FILTER, JSON.stringify(_filter)); }
 function saveBookmarks() { localStorage.setItem(LS_BOOKMARKS, JSON.stringify(_bookmarks)); }
 
-/* â”€â”€ Difficulty filter â”€â”€ */
+/* ── Difficulty filter ── */
 function isDifficultyVisible(diff) {
   if (diff === 'all') return true;
   return _filter[diff] !== false;
@@ -213,7 +213,7 @@ function initDifficultyButtons() {
   });
 }
 
-/* â”€â”€ Nav tree â”€â”€ */
+/* ── Nav tree ── */
 function renderNavTree() {
   const tree = document.getElementById('navTree');
   if (!tree) return;
@@ -223,14 +223,14 @@ function renderNavTree() {
     const nonIndex = entries.filter(e => !e.is_index);
     const done = nonIndex.filter(e => _completed.has(e.path));
     const allDone = nonIndex.length > 0 && done.length === nonIndex.length;
-    const countStr = allDone ? `${nonIndex.length}/${nonIndex.length} âœ“` : `${done.length}/${nonIndex.length}`;
+    const countStr = allDone ? `${nonIndex.length}/${nonIndex.length} ✓` : `${done.length}/${nonIndex.length}`;
 
     const items = entries.map(e => {
       const isDone = _completed.has(e.path);
       const isActive = e.path === _currentPath;
       const isOff = !isDifficultyVisible(e.difficulty);
       const cls = ['nav-item', isDone ? 'done' : '', isActive ? 'active' : '', isOff ? 'filtered-off' : ''].filter(Boolean).join(' ');
-      const check = isDone ? '<span class="nav-check">â– </span>' : '<span class="nav-check">â–¡</span>';
+      const check = isDone ? '<span class="nav-check">■</span>' : '<span class="nav-check">□</span>';
       const badge = e.difficulty !== 'all'
         ? `<span class="diff-badge ${e.difficulty}">${e.difficulty.slice(0,3).toUpperCase()}</span>`
         : '';
@@ -240,7 +240,7 @@ function renderNavTree() {
     return `
       <div class="nav-section">
         <div class="nav-section-header" data-sec="${sec.num}">
-          <span class="section-toggle">â–¾</span>
+          <span class="section-toggle">▾</span>
           <span>${escHtml(sec.name)}</span>
           <span class="section-count">${countStr}</span>
         </div>
@@ -257,12 +257,12 @@ function renderNavTree() {
       const items = document.getElementById(`nav-sec-${sec}`);
       if (!items) return;
       const collapsed = items.classList.toggle('collapsed');
-      el.querySelector('.section-toggle').textContent = collapsed ? 'â–¸' : 'â–¾';
+      el.querySelector('.section-toggle').textContent = collapsed ? '▸' : '▾';
     });
   });
 }
 
-/* â”€â”€ Progress â”€â”€ */
+/* ── Progress ── */
 function updateProgress() {
   const nonIndex = _index.filter(e => !e.is_index && isDifficultyVisible(e.difficulty));
   const done = nonIndex.filter(e => _completed.has(e.path));
@@ -284,7 +284,7 @@ function updateProgress() {
   }
 }
 
-/* â”€â”€ TOC â”€â”€ */
+/* ── TOC ── */
 let _tocObserver = null;
 
 function renderToc(headings) {
@@ -325,7 +325,7 @@ function startTocObserver(headings) {
   });
 }
 
-/* â”€â”€ Bookmarks â”€â”€ */
+/* ── Bookmarks ── */
 function isBookmarked(path) {
   return _bookmarks.some(b => b.path === path);
 }
@@ -363,7 +363,7 @@ function renderBookmarks() {
   });
 }
 
-/* â”€â”€ Sidebar tabs â”€â”€ */
+/* ── Sidebar tabs ── */
 function initSidebarTabs() {
   document.querySelectorAll('.sidebar-tab').forEach(tab => {
     tab.addEventListener('click', () => {
@@ -383,18 +383,18 @@ function initSidebarTabs() {
   });
 }
 
-/* â”€â”€ Filter strip â”€â”€ */
+/* ── Filter strip ── */
 function renderFilterStrip() {
   const indicators = document.getElementById('filterIndicators');
   if (!indicators) return;
   indicators.innerHTML = ['beginner', 'intermediate', 'advanced'].map(d =>
     `<span class="filter-indicator ${_filter[d] ? 'on' : ''} ${d}">
-      ${_filter[d] ? 'â– ' : 'â–¡'} ${d.toUpperCase()}
+      ${_filter[d] ? '■' : '□'} ${d.toUpperCase()}
     </span>`
   ).join('');
 }
 
-/* â”€â”€ Utility â”€â”€ */
+/* ── Utility ── */
 function escHtml(str) {
   return String(str)
     .replace(/&/g, '&amp;')
@@ -403,7 +403,7 @@ function escHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• Â§6 SEARCH */
+/* ═══════════════════════════════════════════════ §6 SEARCH */
 
 let _searchFocusIdx = -1;
 
@@ -515,7 +515,7 @@ function initSearch() {
   });
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• Â§7 SKILL TREE */
+/* ═══════════════════════════════════════════════ §7 SKILL TREE */
 
 function computeNodeState(sectionNum) {
   const entries = getEntriesForSection(sectionNum).filter(e => !e.is_index);
@@ -539,7 +539,7 @@ function renderSkillTree() {
     const entries = getEntriesForSection(num).filter(e => !e.is_index);
     const done = entries.filter(e => _completed.has(e.path)).length;
     const pct = entries.length ? Math.round((done / entries.length) * 100) : 0;
-    const name = meta ? meta.name.replace(/^\d+ â€” /, '') : `SECTION ${num}`;
+    const name = meta ? meta.name.replace(/^\d+ — /, '') : `SECTION ${num}`;
     return `
       <div class="skilltree-node ${state}" data-sec="${num}">
         <div class="skilltree-node-num">0${num}</div>
@@ -590,7 +590,7 @@ function initSkillTree() {
   });
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• Â§8 LEARNING PATHS */
+/* ═══════════════════════════════════════════════ §8 LEARNING PATHS */
 
 function getActivePath() {
   return _activePath ? LEARNING_PATHS[_activePath] : null;
@@ -646,7 +646,7 @@ function renderPathModal() {
         <div class="path-option-count">${getResolvedPathArticles(key).length} articles</div>
       </div>
     `).join('')}
-    <button class="path-skip" id="pathSkip">Skip â€” browse freely</button>
+    <button class="path-skip" id="pathSkip">Skip — browse freely</button>
   `;
 
   modal.querySelectorAll('.path-option').forEach(el => {
@@ -685,7 +685,7 @@ function updatePathPosition() {
   if (!_activePath || !_currentPath) { el.textContent = ''; return; }
   const pos = getPathPosition(_currentPath);
   if (!pos) { el.textContent = ''; return; }
-  el.textContent = `PATH: ${escHtml(LEARNING_PATHS[_activePath].label)} â–¸ Topic ${pos.current} of ${pos.total}`;
+  el.textContent = `PATH: ${escHtml(LEARNING_PATHS[_activePath].label)} ▸ Topic ${pos.current} of ${pos.total}`;
 }
 
 function initPathModal() {
@@ -698,7 +698,7 @@ function initPathModal() {
   });
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• Â§9 ARTICLE RENDERER */
+/* ═══════════════════════════════════════════════ §9 ARTICLE RENDERER */
 
 function configureMarked() {
   const renderer = new marked.Renderer();
@@ -727,7 +727,7 @@ function extractHeadings(html) {
 
 function sectionRef(entry) {
   if (!entry) return '';
-  let ref = `Â§0${entry.section_num}`;
+  let ref = `§0${entry.section_num}`;
   if (entry.subsection) ref += `.${entry.subsection}`;
   return ref;
 }
@@ -753,18 +753,18 @@ async function showArticle(path) {
     header.innerHTML = `
       <div class="article-meta">
         <span class="section-ref">${escHtml(sectionRef(entry))}</span>
-        ${entry ? ` â€” ${escHtml(entry.section)}` : ''}
-        â€” HARDWARE HACKING STARTER PACK
+        ${entry ? ` — ${escHtml(entry.section)}` : ''}
+        — HARDWARE HACKING STARTER PACK
       </div>
       <div class="article-title">${escHtml(entry?.title || path)}</div>
       <div class="article-tags">
         ${diff !== 'all' ? `<span class="tag ${diff}">${diff.toUpperCase()}</span>` : ''}
         ${tags.map(t => `<span class="tag">${escHtml(t.toUpperCase())}</span>`).join('')}
         <button class="bookmark-btn ${bookmarked ? 'active' : ''}" id="bookmarkBtn" aria-label="Bookmark this article">
-          ${bookmarked ? 'â˜… BOOKMARKED' : 'â˜† BOOKMARK'}
+          ${bookmarked ? '★ BOOKMARKED' : '☆ BOOKMARK'}
         </button>
         <button class="mark-complete-btn ${done ? 'done' : ''}" id="markCompleteBtn">
-          ${done ? '[ âœ“ COMPLETE ]' : '[ MARK COMPLETE âœ“ ]'}
+          ${done ? '[ ✓ COMPLETE ]' : '[ MARK COMPLETE ✓ ]'}
         </button>
       </div>
     `;
@@ -774,8 +774,8 @@ async function showArticle(path) {
     const prev = getPrevArticle(path);
     const next = getNextArticle(path);
     document.getElementById('articleNav').innerHTML = `
-      ${prev ? `<button class="article-nav-btn prev" data-path="${escHtml(prev.path)}">[ â† ${escHtml(prev.title)} ]</button>` : ''}
-      ${next ? `<button class="article-nav-btn next" data-path="${escHtml(next.path)}">[ ${escHtml(next.title)} â†’ ]</button>` : ''}
+      ${prev ? `<button class="article-nav-btn prev" data-path="${escHtml(prev.path)}">[ ← ${escHtml(prev.title)} ]</button>` : ''}
+      ${next ? `<button class="article-nav-btn next" data-path="${escHtml(next.path)}">[ ${escHtml(next.title)} → ]</button>` : ''}
     `;
 
     document.querySelectorAll('.article-nav-btn').forEach(btn => {
@@ -793,14 +793,14 @@ async function showArticle(path) {
       renderNavTree();
       const btn = document.getElementById('markCompleteBtn');
       const isDone = _completed.has(path);
-      btn.textContent = isDone ? '[ âœ“ COMPLETE ]' : '[ MARK COMPLETE âœ“ ]';
+      btn.textContent = isDone ? '[ ✓ COMPLETE ]' : '[ MARK COMPLETE ✓ ]';
       btn.classList.toggle('done', isDone);
     });
 
     document.getElementById('bookmarkBtn').addEventListener('click', () => {
       toggleBookmark(path);
       const btn = document.getElementById('bookmarkBtn');
-      btn.textContent = isBookmarked(path) ? 'â˜… BOOKMARKED' : 'â˜† BOOKMARK';
+      btn.textContent = isBookmarked(path) ? '★ BOOKMARKED' : '☆ BOOKMARK';
       btn.classList.toggle('active', isBookmarked(path));
     });
 
@@ -847,7 +847,7 @@ function showDashboard() {
       </div>
       <div class="dashboard-card">
         <div class="dashboard-card-label">ACTIVE PATH</div>
-        <div class="dashboard-card-value" style="font-size:14px">${_activePath ? escHtml(LEARNING_PATHS[_activePath].label) : 'â€”'}</div>
+        <div class="dashboard-card-value" style="font-size:14px">${_activePath ? escHtml(LEARNING_PATHS[_activePath].label) : '—'}</div>
         <div class="dashboard-card-sub">${_activePath ? getResolvedPathArticles(_activePath).length + ' articles' : 'Browse freely'}</div>
       </div>
       <div class="dashboard-card">
@@ -856,14 +856,14 @@ function showDashboard() {
         <div class="dashboard-card-sub">saved articles</div>
       </div>
     </div>
-    <p style="color:var(--text-muted);font-size:11px">Select a topic from the sidebar, or use <kbd style="border:1px solid var(--border);padding:1px 4px">âŒ˜K</kbd> to search.</p>
+    <p style="color:var(--text-muted);font-size:11px">Select a topic from the sidebar, or use <kbd style="border:1px solid var(--border);padding:1px 4px">⌘K</kbd> to search.</p>
   `;
 
   renderNavTree();
   updatePathPosition();
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• Â§10 INIT */
+/* ═══════════════════════════════════════════════ §10 INIT */
 
 async function init() {
   try {
